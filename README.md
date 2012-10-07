@@ -1,4 +1,8 @@
 MVC-WebApi
 ==========
 
-Android üzerinden MVC Web Api kullanımı örneği
+MVC Web Api kullanımı örneği.
+
+İstemci Uygulama;
+
+<a href="https://github.com/bbilginn/MVC-WebApi-Android-Client" target="_blank">Android</a>
