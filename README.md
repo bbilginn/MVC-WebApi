@@ -12,3 +12,25 @@ MVC Web Api kullanımı örneği.
 </li>
 
 </ul>
+
+İstek Yolları;
+
+<ul>
+
+<li>
+GetValues : http://webapiornek.azurewebsites.net/api/values
+</li>
+<li>
+GetValue : http://webapiornek.azurewebsites.net/api/values/{id}
+</li>
+<li>
+PostValue : http://webapiornek.azurewebsites.net/api/values/{id}
+</li>
+<li>
+PutValue : http://webapiornek.azurewebsites.net/api/values/{id}
+</li>
+<li>
+DeleteValue : http://webapiornek.azurewebsites.net/api/values/{id}
+</li>
+
+</ul>
