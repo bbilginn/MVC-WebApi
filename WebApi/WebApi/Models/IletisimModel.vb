@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.ComponentModel.DataAnnotations
 Imports System.Globalization
+Imports System.Net.Mail
 
 Public MustInherit Class IletisimModel
     Implements IIletisimForm
@@ -38,13 +39,30 @@ Public MustInherit Class IletisimModel
         End Set
     End Property
 
-    Public Overridable Function MesajAt() As Boolean Implements IIletisimForm.MesajAt
-        'Mesaj Gönderme yada db işlemleri işlemleri
-        Return True
+    Public Overridable Function MesajAt() As String Implements IIletisimForm.MesajAt
+        Dim eMail As New MailMessage()
+
+        eMail.From = New MailAddress("email@xxx.com", "XXX XXX")
+        eMail.To.Add(Mail)
+        eMail.Subject = "Client ile Mail Gönderimi"
+
+        eMail.Body = Mesaj
+
+        Dim smtp As New SmtpClient()
+        smtp.Host = "ghs.google.com"
+        smtp.Port = "578"
+        smtp.EnableSsl = True
+        smtp.Credentials = New Net.NetworkCredential("email@xxx.com", "xxxxxxxx")
+        Try
+            smtp.Send(eMail)
+            Return "İşlem Başarılı !"
+        Catch ex As Exception
+            Return "İşlem Başarısız !"
+        End Try
     End Function
 
 End Class
 
 Public Interface IIletisimForm
-    Function MesajAt() As Boolean
+    Function MesajAt() As String
 End Interface
