@@ -52,7 +52,7 @@ Public MustInherit Class IletisimModel
         smtp.Host = "ghs.google.com"
         smtp.Port = "578"
         smtp.EnableSsl = True
-        smtp.Credentials = New Net.NetworkCredential("email@xxx.com", "xxxxxxxx")
+        smtp.Credentials = New Net.NetworkCredential("email@gmail.com", "Şifre")
         Try
             smtp.Send(eMail)
             Return "İşlem Başarılı !"
