@@ -15,7 +15,7 @@ Public Class ValuesController
     End Function
 
     ' POST api/values
-    Public Function PostValue(ByVal value As IletisimModel) as Boolean 
+    Public Function PostValue(ByVal value As IletisimModel) As String
         Return value.MesajAt
     End Function
 
