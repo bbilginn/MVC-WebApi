@@ -1,5 +1,6 @@
 ﻿Imports System.Net
 Imports System.Web.Http
+Imports System.Net.Http
 
 Public Class ValuesController
     Inherits ApiController
@@ -15,8 +16,14 @@ Public Class ValuesController
     End Function
 
     ' POST api/values
-    Public Function PostValue(ByVal value As IletisimModel) As String
-        Return value.MesajAt
+    Public Function PostValue(ByVal value As IletisimModel) As HttpResponseMessage
+        Dim response As HttpResponseMessage
+        If value.MesajAt Then
+            response = Request.CreateResponse(HttpStatusCode.OK)
+        Else
+            response = Request.CreateResponse(HttpStatusCode.BadGateway)
+        End If
+        Return response
     End Function
 
     ' PUT api/values/5

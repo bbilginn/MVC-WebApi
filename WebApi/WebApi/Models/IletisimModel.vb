@@ -39,7 +39,7 @@ Public Class IletisimModel
         End Set
     End Property
 
-    Public Overridable Function MesajAt() As String Implements IIletisimForm.MesajAt
+    Public Function MesajAt() As Boolean Implements IIletisimForm.MesajAt
         Dim eMail As New MailMessage()
 
         eMail.From = New MailAddress("webapidemos@gmail.com", "Web Api")
@@ -55,14 +55,14 @@ Public Class IletisimModel
         smtp.Credentials = New Net.NetworkCredential("webapidemos@gmail.com", "/8520/8520")
         Try
             smtp.Send(eMail)
-            Return "İşlem Başarılı !"
+            Return True
         Catch ex As Exception
-            Return "İşlem Başarısız !"
+            Return False
         End Try
     End Function
 
 End Class
 
 Public Interface IIletisimForm
-    Function MesajAt() As String
+    Function MesajAt() As Boolean
 End Interface
