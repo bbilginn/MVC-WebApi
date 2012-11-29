@@ -3,7 +3,7 @@ Imports System.ComponentModel.DataAnnotations
 Imports System.Globalization
 Imports System.Net.Mail
 
-Public MustInherit Class IletisimModel
+Public Class IletisimModel
     Implements IIletisimForm
 
     Private IsimVal As String
@@ -49,7 +49,7 @@ Public MustInherit Class IletisimModel
         eMail.Body = Mesaj
 
         Dim smtp As New SmtpClient()
-        smtp.Host = "ghs.google.com"
+        smtp.Host = "smtp.google.com"
         smtp.Port = "578"
         smtp.EnableSsl = True
         smtp.Credentials = New Net.NetworkCredential("webapidemos@gmail.com", "/8520/8520")
