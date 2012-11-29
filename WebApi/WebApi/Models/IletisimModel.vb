@@ -42,7 +42,7 @@ Public MustInherit Class IletisimModel
     Public Overridable Function MesajAt() As String Implements IIletisimForm.MesajAt
         Dim eMail As New MailMessage()
 
-        eMail.From = New MailAddress("email@xxx.com", "XXX XXX")
+        eMail.From = New MailAddress("webapidemos@gmail.com", "Web Api")
         eMail.To.Add(Mail)
         eMail.Subject = "Client ile Mail Gönderimi"
 
@@ -52,7 +52,7 @@ Public MustInherit Class IletisimModel
         smtp.Host = "ghs.google.com"
         smtp.Port = "578"
         smtp.EnableSsl = True
-        smtp.Credentials = New Net.NetworkCredential("email@gmail.com", "Şifre")
+        smtp.Credentials = New Net.NetworkCredential("webapidemos@gmail.com", "/8520/8520")
         Try
             smtp.Send(eMail)
             Return "İşlem Başarılı !"
