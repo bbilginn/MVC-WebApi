@@ -21,7 +21,7 @@ Public Class ValuesController
         If value.MesajAt Then
             response = Request.CreateResponse(HttpStatusCode.OK)
         Else
-            response = Request.CreateResponse(HttpStatusCode.BadGateway)
+            response = Request.CreateResponse(HttpStatusCode.BadRequest)
         End If
         Return response
     End Function
