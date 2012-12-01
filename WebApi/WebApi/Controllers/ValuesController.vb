@@ -16,12 +16,12 @@ Public Class ValuesController
     End Function
 
     ' POST api/values
-    Public Function PostValue(ByVal value As IletisimModel) As HttpResponseMessage
-        Dim response As HttpResponseMessage
+    Public Function PostValue(ByVal value As IletisimModel) As String
+        Dim response As String
         If value.MesajAt Then
-            response = Request.CreateResponse(HttpStatusCode.OK)
+            response = Request.CreateResponse(HttpStatusCode.OK).StatusCode
         Else
-            response = Request.CreateResponse(HttpStatusCode.BadRequest)
+            response = Request.CreateResponse(HttpStatusCode.BadGateway).StatusCode
         End If
         Return response
     End Function

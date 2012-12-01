@@ -45,12 +45,13 @@ Public Class IletisimModel
         eMail.From = New MailAddress("webapidemos@gmail.com", "Web Api")
         eMail.To.Add(Mail)
         eMail.Subject = "Client ile Mail Gönderimi"
+        'nie 3 kez geldi :D
 
         eMail.Body = Mesaj
-
+        'gmail yazıyordu orada
         Dim smtp As New SmtpClient()
-        smtp.Host = "smtp.google.com"
-        smtp.Port = "578"
+        smtp.Host = "smtp.gmail.com"
+        smtp.Port = "587"
         smtp.EnableSsl = True
         smtp.Credentials = New Net.NetworkCredential("webapidemos@gmail.com", "/8520/8520")
         Try
